@@ -1,0 +1,274 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	margin: 0px;
+	font-family: "微软雅黑";
+	color: var(--text-color);
+	background: var(--dark-bg);
+	padding: 0;
+}
+
+.main-header {
+	/*头部*/
+	background: var(--mid-bg);
+	height: 80px;
+	padding: 15px 0;
+	border-bottom: 2px solid var(--primary-color);
+}
+
+.headerbox {
+	/*头部盒子，包含头部所有标签*/
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.logo {
+	/*网站logo*/
+	font-size: 50px;
+	color: var(--primary-color);
+	margin: 0;
+}
+
+
+.main-header .headerbox {
+	/*在头部标签下所有的头部盒子里的内容*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav a {
+	/*因为nav导航中不只有链接所以写为.nav a*/
+	color: var(--text-color);
+	text-decoration: none;
+	margin: 0 10px;
+	padding: 5px 10px;
+	border-radius: 4px;
+}
+
+.nav li {
+	float: left;
+	list-style-type: none;
+}
+
+.nav a:hover,
+.nav a.active {
+	/*鼠标访问事件*/
+	background: var(--primary-color);
+	color: white;
+}
+
+#search {
+	width: 250px;
+	height: 25px;
+}
+
+.search-button {
+	height: 35px;
+	background: var(--primary-color);
+	border-radius: 5px;
+	color: var(--text-color);
+}
+
+.logon {
+	height: 35px;
+	background: var(--primary-color);
+	border-radius: 5px;
+	color: var(--text-color);
+}
+
+#user-area {
+	height: 30px;
+	right: 210px;
+	margin-right:17px;
+	border-radius: 5px;
+	color: var(--text-color);
+	background-color: var(--primary-color);
+	overflow: hidden;
+	visibility: hidden;
+	z-index: 999;
+}
+#user-area a{
+	color: var(--text-color);
+	text-decoration: none;
+}
+#user-area li{
+	list-style-type: none;
+	line-height: 30px;
+	text-align: center;
+	color: var(--text-color);
+	background-color: var(--primary-color);
+}
+#user-area ul{
+	margin-top: 0px;
+	padding: 0px;
+	width: 80px;
+	height: 185px;
+}
+#user-area:hover{
+	overflow: inherit;
+}
+
+.main-div {
+	display: flex;
+	min-height: calc(100vh - 150px);
+	/* 减去header和footer高度 */
+}
+
+.sidebar {
+	width: 200px;
+	background: var(--mid-bg);
+	padding: 20px;
+}
+
+.sidebar li {
+	list-style-type: none;
+}
+
+.sidebar a {
+	font-size: 20px;
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.sidebar a:hover {
+	/*鼠标访问事件*/
+	background: var(--primary-color);
+	color: white;
+}
+
+.content-area {
+	flex: 1;
+	padding: 20px;
+}
+
+#contentFrame {
+	width: 100%;
+	height: 93%;
+	border: none;
+	background: var(--dark-bg);
+	border-radius: 8px;
+}
+
+/* 页脚样式 */
+.main-footer {
+	clear: both;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+	margin-top: 20px;
+	padding: 20px 0;
+	background: var(--mid-bg);
+	border-top: 2px solid var(--primary-color);
+}
+
+.logonbox {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	visibility: hidden;
+}
+
+.logonbox button {
+	background: var(--primary-color);
+	border-radius: 5px;
+	color: var(--text-color);
+	width: 70px;
+	height: 30px;
+}
+
+.logonbox input {
+	margin: 5px;
+}
+
+#codeid {
+	display: block;
+	border: 1px solid var(--text-color);
+	margin: 10px auto;
+	width: 130px;
+	height: 40px;
+	overflow: hidden;
+}
+#back{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 650px;
+	top: 200px;
+	z-index: 999;
+}
+.on {
+	position: fixed;
+	top: 200px;
+	left: 650px;
+	width: 400px;
+	height: 350px;
+	border-radius: 10px;
+	text-align: center;
+	background-color: var(--mid-bg);
+	color: var(--primary-color);
+}
+
+.change {
+	color: var(--text-color);
+	white-space: nowrap;
+	margin: 0 auto;
+	width: 120px;
+	text-decoration: underline;
+}
+
+.tocreat {
+	color: var(--text-color);
+	text-decoration: underline;
+}
+
+.creat {
+	position: fixed;
+	top: 200px;
+	left: 650px;
+	width: 400px;
+	height: 350px;
+	border-radius: 10px;
+	text-align: center;
+	background-color: var(--mid-bg);
+	color: var(--primary-color);
+	visibility: hidden;
+}
+#show-register{
+	color: var(--text-color);
+}
+#show-login{
+	color: var(--text-color);
+}
+.active {
+	/*鼠标访问事件*/
+	background: var(--primary-color);
+	color: white;
+}
+.audio-controls{
+	text-align: center;
+	background-color: var(--primary-color);
+	margin-top: 50px;
+	border-radius: 10px;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+}
+.audio-controls button{
+	float: right;
+	height: 50px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}

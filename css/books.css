@@ -1,0 +1,45 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--dark-bg);
+}
+.book{
+	background: white;
+	height: 600px;
+	width: 800px;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 10px;
+	color: var(--primary-color);
+}
+.book img{
+	float: left;
+	width: 400px;
+}
+.book button{
+	width: 80px;
+	height: 30px;
+	background-color: var(--primary-color);
+	color: var(--text-color);
+	margin-bottom: 10px;
+	border: 1px solid var(--text-color);
+}
+.book p{
+	font-size: 20px;
+	font-weight: bold;
+}
+#buy{
+	width: 200px;
+	height: 60px;
+	margin: 100px;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+}

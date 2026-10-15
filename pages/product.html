@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NERV书店 - 订单页面</title>
+		<link rel="stylesheet" href="../css/product.css" />
+		<script src="../js/product.js" defer></script>
+	</head>
+	<body>
+		<video class="video-bg" src="../video/EVA-新世纪福音战士.mp4" autoplay muted loop></video>
+		<div class="product-offer">
+			<h1>订单确认</h1>
+
+			<!-- 用户信息表单 -->
+			<div class="user-info">
+				<h2>收货信息</h2>
+				<form id="offer">
+					<div class="offer-group">
+						<label for="username">姓名：</label>
+						<input type="text" id="username" name="username" required>
+					</div>
+					<div class="offer-group">
+						<label for="phone">电话号码：</label>
+						<input type="tel" id="phone" name="phone" required>
+					</div>
+					<div class="offer-group">
+						<label for="address">收货地址：</label>
+						<textarea id="address" name="address" required></textarea>
+					</div>
+				</form>
+			</div>
+
+			<!-- 商品列表 -->
+			<div class="product-items">
+				<h2>购买商品</h2>
+				<div id="cartItems"></div>
+				<div id="sumprice"></div>
+			</div>
+
+			<!-- 提交按钮 -->
+			<div class="submit-button">
+				<button id="submitOrder">提交订单</button>
+			</div>
+		</div>
+
+		<!-- 下单成功模态框 -->
+		<div id="successModal" class="modal">
+			<div class="modal-content">
+				<h2>感谢购买！</h2>
+				<p>您的订单已成功提交</p>
+				<p>我们会尽快为您处理订单</p>
+				<button id="closeModal">关闭</button>
+			</div>
+		</div>
+	</body>
+</html>

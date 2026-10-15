@@ -1,0 +1,184 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--dark-bg);
+}
+
+.roundtxt {
+	width: 80%;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 auto;
+}
+
+.marquee {
+	display: inline-block;
+	animation: marquee 15s linear infinite;
+}
+
+.marquee p {
+	display: inline-block;
+	font-size: 20px;
+	margin: 0 0 10px;
+	padding-left: 50%;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(120%);
+	}
+
+	100% {
+		transform: translateX(-150%);
+	}
+}
+
+.banner {
+	width: 600px;
+	height: 300px;
+	border-radius: 10px;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+
+.slider {
+	width: 1800px;
+	/* 3张图片宽度总和 */
+	height: 300px;
+	display: flex;
+	transition: transform 0.5s ease;
+}
+
+.slider img {
+	width: 600px;
+	flex-shrink: 0;
+}
+
+.circle {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.circle li {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 0 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.circle li.active {
+	background-color: var(--primary-color);
+}
+
+.goods {
+	margin-top: 100px;
+}
+
+.goods a {
+	color: var(--primary-color);
+}
+
+.goods div {
+	width: 45%;
+	height: 200px;
+	padding: 10px;
+	margin: 20px;
+	margin-top: 60px;
+	float: left;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 3px 3px 10px var(--text-color);
+}
+
+.goods img {
+	float: left;
+	margin: -80px 10px 0px;
+	width: 200px;
+	box-shadow: 3px 3px 10px var(--text-color);
+	transition: 0.5s;
+}
+
+.goods img:hover {
+	transform: scale(1.1);
+}
+
+.goods span {
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.goods p {
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.sort {
+	margin-top: 100px;
+}
+
+.sort div {
+	width: 45%;
+	height: 200px;
+	padding: 10px;
+	margin: 20px auto;
+	margin-top: 60px;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 3px 3px 10px var(--text-color);
+}
+
+.sort img {
+	float: left;
+	margin: -80px 10px 0px;
+	width: 200px;
+	box-shadow: 3px 3px 10px var(--text-color);
+	transition: 0.5s;
+}
+
+.sort a {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+.sort p {
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.sort h1 {
+	color: var(--primary-color);
+}
+
+.sort h2 {
+	color: #ff5500;
+}
+
+.sort img:hover {
+	transform: scale(1.1);
+}
+
+.more {
+	float: right;
+	color: var(--primary-color);
+}

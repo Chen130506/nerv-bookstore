@@ -1,0 +1,37 @@
+#loading-container {
+	margin-top: 300px;
+    text-align: center;
+}
+ 
+.eva-loading {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+ 
+.eva-loading-circle {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    border-top-color: #ff0000;
+    animation: spin 2s linear infinite;
+}
+ 
+.eva-loading-text {
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 10px #ff0000;
+}
+ 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

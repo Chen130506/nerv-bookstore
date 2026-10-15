@@ -1,0 +1,65 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	margin: 0px;
+	padding: 0;
+	font-family: "微软雅黑";
+	color: var(--text-color);
+	background: var(--dark-bg);
+}
+
+a {
+	text-decoration: none;
+	color: var(--primary-color);
+}
+
+.info-box {
+	margin: 50px auto;
+	width: 80%;
+	height: 100%;
+	display: flex;
+}
+
+.list-button {
+	width: 20%;
+}
+
+.list-button li {
+	padding: 20px;
+	color: var(--primary-color);
+	border: 1px solid var(--dark-bg);
+	border-right: 1px solid var(--text-color);
+	list-style-type: none;
+}
+
+.list-button li.active {
+	border: 1px solid var(--text-color);
+	border-right: 1px solid var(--dark-bg);
+}
+
+.content {
+	width: 80%;
+	padding: 50px;
+}
+
+.page {
+	display: none;
+}
+
+.page.active {
+	display: block;
+}
+.clear{
+	background-color: var(--primary-color);
+	color: var(--text-color);
+	margin-top: 30px;
+	width: 130px;
+	height: 60px;
+}

@@ -1,0 +1,104 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	color: var(--primary-color);
+	background-color: var(--dark-bg);
+}
+.orders-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.order-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #666;
+}
+
+.order-status {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.order-status.pending { color: #ff9800; }
+.order-status.shipped { color: #2196F3; }
+.order-status.completed { color: #4CAF50; }
+.order-status.cancelled { color: #f44336; }
+
+.order-details {
+    margin-top: 10px;
+}
+
+.order-items {
+    margin-top: 10px;
+}
+
+.order-item-info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.order-item-info img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.order-item-details {
+    flex-grow: 1;
+}
+
+.order-footer {
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 50px;
+    color: #666;
+}
+
+.shop-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.shop-link:hover {
+    background-color: #45a049;
+}

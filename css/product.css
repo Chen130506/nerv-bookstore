@@ -1,0 +1,117 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--dark-bg);
+}
+
+.video-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+.product-offer {
+	z-index: 1;
+	width: 60%;
+	margin: 50px auto;
+	padding: 50px;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: var(--primary-color);
+	border-radius: 10px;
+}
+.offer-group{
+	margin-bottom: 15px;
+}
+.offer-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.offer-group input,
+.offer-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#submitOrder {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+	transition: 0.5s;
+}
+#submitOrder:hover {
+	font-weight: bold;
+    background-color: var(--text-color);
+	color: var(--primary-color);
+}
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+.cart-item-info {
+	width: 60%;
+	height: 130px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	color: var(--primary-color);
+	background-color: white;
+	box-shadow: 3px 3px 10px var(--text-color);
+}
+
+.cart-item-info img {
+	float: left;
+	width: 100px;
+	box-shadow: 3px 3px 10px var(--text-color);
+	transition: 0.5s;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+ 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+ 
+#closeModal {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}

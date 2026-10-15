@@ -1,0 +1,65 @@
+:root {
+	/*这是全局变量，用于统一网页主题和风格*/
+	--primary-color: #D7000F;
+	--secondary-color: #5E007F;
+	--text-color: #E0E0E0;
+	--dark-bg: #1A1A1A;
+	--mid-bg: #2A2A2A;
+}
+
+body {
+	margin: 0px;
+	font-family: "微软雅黑";
+	color: var(--text-color);
+	background: var(--dark-bg);
+	padding: 0;
+}
+.search-container {
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.search-container input {
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.good{
+	color: var(--primary-color);
+	text-decoration: none;
+}
+.good div{
+	width: 80%;
+	height: 200px;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 100px;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 3px 3px 10px var(--text-color);
+}
+.good img{
+	float: left;
+	margin: -80px 10px 0px;
+	width: 200px;
+	box-shadow: 3px 3px 10px var(--text-color);
+	transition: 0.5s;
+}
+.good img:hover {
+	transform: scale(1.1);
+}
+.good p{
+	line-height: 60px;
+	font-weight: bold;
+	font-size: 30px;
+}

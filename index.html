@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>NERV书店 - 新世纪福音战士主题</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/load.css" />
+		<script src="js/jquery-3.2.1.min.js" defer></script>
+		<script src="js/index.js" defer></script>
+		<script src="js/load.js" defer></script>
+	</head>
+	<body>
+		<!--音乐-->
+		<audio src="audio/One Last Kiss.flac" autoplay loop id="bgMusic"></audio>
+		<!-- 载入动画 -->
+		<div id="loading-container">
+			<div class="eva-loading">
+				<div class="eva-loading-circle"></div>
+				<div class="eva-loading-text">LOADING</div>
+			</div>
+		</div>
+		<div id="main">
+			<!-- 登录/注册 -->
+			<div class="logonbox">
+				<button id="back">X</button>
+				<div class="on">
+					<h1>登錄</h1>
+					<input type="text" id="login-user" placeholder="请输入用户名" /><br />
+					<input type="password" id="login-pwd" placeholder="请输入密码" /><br />
+					<input type="text" id="login-code" placeholder="输入验证码" /><br />
+					<span class="login-error" style="color: red; display: none;"></span>
+					<canvas id="codeid" onload="drawcode()"></canvas>
+					<div class="change">
+						<span onclick="drawcode()">看不清,换一张</span>
+					</div>
+					<button class="sure" id="login-btn">登录</button><br />
+					<span class="tocreat">没有账号？<a href="#" id="show-register">注册一个！</a></span>
+
+				</div>
+				<div class="creat">
+					<h1>注册</h1>
+					<input type="text" id="reg-user" placeholder="请输入用户名" /><br />
+					<input type="password" id="reg-pwd" placeholder="请输入密码" /><br />
+					<input type="password" id="reg-pwd-ag" placeholder="再次输入密码" /><br />
+					<button class="register" id="register-btn">确认注册</button>
+					<p class="reg-error" style="color: red; display: none;"></p>
+					<p class="tologin"><a href="#" id="show-login">已有账号？去登录</a></p>
+				</div>
+			</div>
+			<!-- 导航栏 -->
+			<header class="main-header">
+				<div class="headerbox"><!-- headerbox是指导航栏盒子，即包含导航栏的所有内容 -->
+					<h1 class="logo">NERV</h1>
+					<ul class="nav">
+						<li><a href="pages/home.html" target="contentFrame" class="active">主页</a></li>
+						<li><a href="pages/category.html" target="contentFrame" onclick="removeActiveClass(this)">分类</a>
+						</li>
+						<li><a href="pages/category.html" target="contentFrame" id="news">新品</a></li>
+						<li><a href="https://baike.baidu.com/item/%E6%96%B0%E4%B8%96%E7%BA%AA%E7%A6%8F%E9%9F%B3%E6%88%98%E5%A3%AB/55458"
+								target="contentFrame">关于</a></li>
+						<li><a href="mailto:2036163718@qq.com" target="contentFrame">联系</a></li>
+					</ul>
+					<div class="user-action">
+						<input type="text" id="search" placeholder="搜索…" />
+						<button class="search-button" id="search-btn">搜索</button>
+						<button class="logon">登录/注册</button>
+					</div>
+					<div id="user-area">
+						<ul>
+							<li id="name">用户</li>
+							<li><a href="./pages/personInfo.html" target="contentFrame">个人中心</a></li>
+							<li><a href="./pages/cart.html" target="contentFrame">购物车</a></li>
+							<li><a href="./pages/myProduct.html" target="contentFrame">我的订单</a></li>
+							<li id="logout">退出账号</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+			<div class="main-div">
+				<!-- 左侧侧边栏 -->
+				<aside class="sidebar"><!--aside是网页侧边的标签-->
+					<div class="side-select">
+						<h3>快速链接</h3>
+						<ul>
+							<li><a href="pages/home.html#tuijian" target="contentFrame">推荐商品</a></li>
+							<li><a href="pages/home.html#changxiao" target="contentFrame">畅销榜</a></li>
+							<li><a href="pages/home.html#sales" target="contentFrame">特价专区</a></li>
+						</ul>
+					</div>
+					<div class="side-select">
+						<h3>商品分类</h3>
+						<ul>
+							<li><a href="pages/category.html" target="contentFrame" id="novel">小说</a></li>
+							<li><a href="pages/category.html" target="contentFrame" id="comic">漫画</a></li>
+							<li><a href="pages/category.html" target="contentFrame" id="exhibition">会展</a></li>
+						</ul>
+					</div>
+					<div class="side-select">
+						<h3>主题切换</h3>
+						<div class="theme-switch">
+							<button class="btn btn-theme active" data-theme="eva">EVA模式</button>
+							<button class="btn btn-theme" data-theme="normal">普通模式</button>
+						</div>
+					</div>
+					<div class="audio-controls">
+						<span id="musicStatus">音乐播放中...</span>
+						<button id="toggleMusic">暂停</button>
+					</div>
+				</aside>
+				<!-- 内容框架 -->
+				<div class="content-area">
+					<iframe id="contentFrame" name="contentFrame" src="pages/home.html" frameborder="0"></iframe>
+				</div>
+			</div>
+		</div>
+		<footer class="main-footer">
+			<p>&copy; 2025 NERV商店. 保留所有权利.</p>
+		</footer>
+		</div>
+	</body>
+</html>
