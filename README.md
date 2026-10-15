@@ -93,6 +93,19 @@ python -m http.server 8080
 
 ---
 
+## 在线部署
+
+纯静态站点，**不需要构建、不需要后端**，任何静态托管都能直接跑：
+
+- **GitHub Pages**（最省事，不用另开平台）：仓库 `Settings → Pages` → Source 选 `Deploy from a branch` → 分支 `main`、目录 `/ (root)` → Save。等一两分钟后访问 `https://<用户名>.github.io/nerv-bookstore/`
+- **Vercel / Netlify**：导入仓库后直接 Deploy，无需任何构建配置
+
+两个前提都已满足：页面**全部使用相对路径**（没有一处以 `/` 开头），因此放在子目录（GitHub Pages 的默认形式）下也不会 404；入口就是根目录的 `index.html`，托管平台会自动识别为首页。
+
+> 上文「不要直接双击 `index.html`」的限制只存在于 `file://` 协议下。一旦部署到 http/https，`contentDocument` 可以正常访问，主题切换与导航联动都会生效。
+
+---
+
 ## 目录结构
 
 ```
@@ -108,24 +121,24 @@ python -m http.server 8080
 │   ├── search.js
 │   └── load.js                 # 加载动画
 ├── images/                     # 商品与装饰图
-├── audio/                      # 背景音乐（未入库，见下方说明）
+├── audio/                      # 背景音乐：源文件未入库，仓库内为转码后的 mp3（见下方说明）
 └── video/                      # 视频背景（未入库，见下方说明）
 ```
 
 ---
 
-## 关于未入库的音视频素材
+## 媒体素材说明
 
-仓库通过 `.gitignore` 排除了 `audio/` 与 `video/`：
+| 素材 | 原始文件 | 入库 | 说明 |
+| --- | --- | --- | --- |
+| 背景音乐 | `audio/One Last Kiss.flac`<br>约 61MB，5.1 声道无损 | 转码后入库 | 已转为 `audio/one-last-kiss.mp3`（**3.8MB**，128kbps 立体声），网页引用的就是它 |
+| 视频背景 | `video/EVA-新世纪福音战士.mp4`<br>约 68MB | ❌ 未入库 | 第三方版权素材且体积过大。订单页 `product.html` 因此没有视频背景，页面用深色底（`--dark-bg`）兜底，不影响可读性 |
 
-- `audio/One Last Kiss.flac` 约 62MB
-- `video/EVA-新世纪福音战士.mp4` 约 68MB
+**背景音乐为什么要转码**：原始 flac 是 5.1 声道无损格式，61MB 对一段网页背景音乐来说过大，还会明显拖慢 `git clone`。
 
-两者合计约 130MB，是项目体积的 90% 以上。上传会显著拖慢 `git clone`，且这些素材版权不属于本人所有，因此不纳入版本控制。
+转码不依赖 ffmpeg——用 `soundfile` 解码、`lameenc` 编码，并按 ITU-R 常用系数把 6 声道降混为立体声，最后做峰值归一化以避免削波：**61MB → 3.8MB（降到 6%），听感对背景音乐这个场景完全够用**。
 
-**本地运行时不受影响**——被忽略的文件仍在你自己电脑上。但如果你把仓库分享给别人，对方 clone 后 **背景音乐和视频背景将无法播放**，需要自备同名素材放到对应目录下，或修改 `index.html` / `pages/product.html` 中的引用路径。
-
-如果你希望它们也进仓库，删掉 `.gitignore` 里的 `audio/` 和 `video/` 两行即可（注意先确认网络与仓库体积）。
+**本地运行时不受影响**——原始的 flac 与 mp4 仍在你自己电脑的对应目录里，只是没有进版本库。若想让视频背景也上线，把 `.gitignore` 里的 `video/` 一行删掉即可（注意 68MB 会让仓库明显变大）。
 
 ---
 
